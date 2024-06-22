@@ -8,6 +8,8 @@ import NotFound from "../NotFound";
 import SignIn from "../SignIn";
 import "./App.css";
 
+import Navbar from "../../Components/Navbar";
+
 const AppRoutes = () => {
   let routes = useRoutes([
     {path: "/", element: <Home />},
@@ -23,7 +25,9 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <BrowserRouter>
+    <Navbar/>
       <AppRoutes />
+      
     </BrowserRouter>
   );
 };
