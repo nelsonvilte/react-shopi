@@ -34,8 +34,9 @@ const handleCheckout=()=>{
     >
       <div className="flex justify-between items-center p-6">
         <h2 className="font-medium text-xl">My Order</h2>
-        <div onClick={() => context.closeCheckoutSideMenu()}>
-          <XMarkIcon className="h-6 w-6 text-blue-500"></XMarkIcon>
+        <div>
+          <XMarkIcon className="h-6 w-6 text-black cursor-pointer"
+          onClick={() => context.closeCheckoutSideMenu()}></XMarkIcon>
         </div>
       </div>
       <div className="px-6 overflow-y-scroll flex-1">
