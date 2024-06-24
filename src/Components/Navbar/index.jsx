@@ -10,11 +10,12 @@ const Navbar = () => {
     <nav className="bg-white flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light">
       <ul className="flex items-center gap-3">
         <li className="font-semibold text-lg">
-          <NavLink to="/">Shopi</NavLink>
+          <NavLink to="/">Free Shopi</NavLink>
         </li>
         <li>
           <NavLink
             to="/"
+            //onClick={()=> context.setFilterItems(null)}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             All
@@ -22,44 +23,41 @@ const Navbar = () => {
         </li>
         <li>
           <NavLink
-            to="/clothes"
+            to="/mens-clothes"
+            onClick={()=> context.setSearchByCategory("men's clothing")}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
-            Clothes
+            Mens clothing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/womens-clothes"
+            onClick={()=> context.setSearchByCategory( "women's clothing")}
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Womens clothing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/jewelery"
+            onClick={()=> context.setSearchByCategory("jewelery")}
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
+          >
+            Jewelery
           </NavLink>
         </li>
         <li>
           <NavLink
             to="/electronics"
+            onClick={()=> context.setSearchByCategory("electronics")}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             Electronics
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            to="/fornitures"
-            className={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Fornitures
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/toys"
-            className={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Toys
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/others"
-            className={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Others
-          </NavLink>
-        </li>
+  
       </ul>
 
       <ul className="flex items-center gap-3">
@@ -90,7 +88,7 @@ const Navbar = () => {
         </li>
         <li className="flex items-center">
           <ShoppingBagIcon className="h-6 w-6 text-blue-500"></ShoppingBagIcon>
-          <div>{context.count}</div>
+          <div>{context.cartProducts.length}</div>
           
         </li>
       </ul>
