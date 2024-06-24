@@ -57,9 +57,16 @@ export const ShoppingCartProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if(searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle));
-    if(searchByCategory){
-      setFilteredItems(filteredItemsByCategory(items, searchByCategory));}
+    if (items) {
+      let filtered = items;
+      if (searchByTitle) {
+        filtered = filteredItemsByTitle(filtered, searchByTitle);
+      }
+      if (searchByCategory) {
+        filtered = filteredItemsByCategory(filtered, searchByCategory);
+      }
+      setFilteredItems(filtered);
+    }
   }, [items, searchByTitle, searchByCategory]);
 
   //console.log("filteredItems: ", filteredItems);

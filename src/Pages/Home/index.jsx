@@ -8,17 +8,16 @@ function Home() {
   const context = useContext(ShoppingCartContext);
 
   const renderView = () => {
-    if(context.filteredItems?.length > 0){
-        return(
-          context.filteredItems?.map(item=>(
-            <Card key={item.id} data={item}/>
-          ))
-        )
-      } else {
-      return(
-        context.items?.map((item) => <Card key={item.id} data={item} />)
-      )
-    
+    if (context.filteredItems?.length > 0) {
+      return context.filteredItems?.map((item) => (
+        <Card key={item.id} data={item} />
+      ));
+    } else {
+      return (
+        <div className="w-full max-w-screen-lg flex justify-center items-center">
+          We dont have anything :(
+        </div>
+      );
     }
   };
 
