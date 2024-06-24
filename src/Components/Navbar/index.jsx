@@ -10,12 +10,12 @@ const Navbar = () => {
     <nav className="bg-white flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light">
       <ul className="flex items-center gap-3">
         <li className="font-semibold text-lg">
-          <NavLink to="/">Shopi</NavLink>
+          <NavLink to="/">Free Shopi</NavLink>
         </li>
         <li>
           <NavLink
             to="/"
-            onClick={()=> context.setFilterItems(null)}
+            //onClick={()=> context.setFilterItems(null)}
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             All
@@ -57,14 +57,7 @@ const Navbar = () => {
             Electronics
           </NavLink>
         </li>
-        {/* <li>
-          <NavLink
-            to="/others"
-            className={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Others
-          </NavLink>
-        </li> */}
+  
       </ul>
 
       <ul className="flex items-center gap-3">
@@ -95,7 +88,7 @@ const Navbar = () => {
         </li>
         <li className="flex items-center">
           <ShoppingBagIcon className="h-6 w-6 text-blue-500"></ShoppingBagIcon>
-          <div>{context.count}</div>
+          <div>{context.cartProducts.length}</div>
           
         </li>
       </ul>
