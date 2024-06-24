@@ -8,19 +8,13 @@ function Home() {
   const context = useContext(ShoppingCartContext);
 
   const renderView = () => {
-    if (context.searchByTitle?.length > 0) {
-      if(context.filteredItems?.length > 0){
+    if(context.filteredItems?.length > 0){
         return(
           context.filteredItems?.map(item=>(
             <Card key={item.id} data={item}/>
           ))
         )
-      }else{
-        return(
-          <div><p>We dont have anything :(</p> </div>
-        )
-      }
-    } else {
+      } else {
       return(
         context.items?.map((item) => <Card key={item.id} data={item} />)
       )

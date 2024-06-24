@@ -32,7 +32,10 @@ export const ShoppingCartProvider = ({ children }) => {
 
   //Get products by title
   const [searchByTitle, setSearchByTitle] = useState(null);
-  //console.log('searchByTitle: ',searchByTitle )
+
+  //Get products by category
+  const [searchByCategory, setSearchByCategory] = useState(null);
+  console.log("searchByCategory: ", searchByCategory);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -46,10 +49,19 @@ export const ShoppingCartProvider = ({ children }) => {
     );
   };
 
+  const filteredItemsByCategory = (items, searchByCategory) => {
+    //console.log("Items: ", items);
+    return items?.filter((item) =>
+      item.category.toLowerCase().includes(searchByCategory.toLowerCase())
+    );
+  };
+
   useEffect(() => {
-    if (searchByTitle)
-      setFilteredItems(filteredItemsByTitle(items, searchByTitle));
-  }, [items, searchByTitle]);
+    if(searchByTitle) setFilteredItems(filteredItemsByTitle(items, searchByTitle));
+    if(searchByCategory){
+      console.log("searchByCategory encontrada: ", searchByCategory);
+      setFilteredItems(filteredItemsByCategory(items, searchByCategory));}
+  }, [items, searchByTitle, searchByCategory]);
 
   console.log("filteredItems: ", filteredItems);
 
@@ -74,7 +86,9 @@ export const ShoppingCartProvider = ({ children }) => {
         setItems,
         searchByTitle,
         setSearchByTitle,
-        filteredItems
+        filteredItems,
+        searchByCategory,
+        setSearchByCategory,
       }}
     >
       {children}
