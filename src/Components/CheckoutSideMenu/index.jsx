@@ -25,9 +25,10 @@ const CheckoutSideMenu = () => {
       totalPrice: totalPrice(context.cartProducts),
     };
 
-    context.setOrder([...context.order, orderToAdd]);
-    context.setCartProducts([]);
-    //console.log("My orders: ", context.order)
+    context.setOrder([...context.order, orderToAdd])
+    context.setCartProducts([])
+    context.setSearchByTitle(null)
+    context.closeCheckoutSideMenu()
   };
   return (
     <aside
