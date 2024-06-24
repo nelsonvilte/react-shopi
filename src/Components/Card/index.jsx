@@ -17,7 +17,7 @@ const Card = (data) => {
     context.openCheckoutSideMenu();
     context.closeProductDetail();
 
-    console.log("Cart: ", context.cartProducts);
+    //console.log("Cart: ", context.cartProducts);
   };
 
   const rederIcon = (id) => {
