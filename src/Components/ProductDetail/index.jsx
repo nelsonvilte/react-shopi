@@ -26,6 +26,9 @@ const ProductDetail = () => {
           className="w-full h-full rounded-lg"
           src={context.productToShow.images}
           alt={context.productToShow.title}
+          onError={(e) => {
+            e.target.src = "https://placehold.co/600x400";
+          }}
         />
       </figure>
       <p className="flex flex-col p-6">
