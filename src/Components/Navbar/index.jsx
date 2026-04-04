@@ -58,28 +58,28 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/mens-clothes"
-              onClick={() => context.setSearchByCategory("men's clothing")}
+              onClick={() => context.setSearchByCategory("Clothe")}
               className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Mens clothing
+              Clothes
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/womens-clothes"
-              onClick={() => context.setSearchByCategory("women's clothing")}
+              onClick={() => context.setSearchByCategory("Furniture")}
               className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Womens clothing
+              Furniture
             </NavLink>
           </li>
           <li>
             <NavLink
               to="/jewelery"
-              onClick={() => context.setSearchByCategory("jewelery")}
+              onClick={() => context.setSearchByCategory("Shoes")}
               className={({ isActive }) => (isActive ? activeStyle : undefined)}
             >
-              Jewelery
+              Shoes
             </NavLink>
           </li>
           <li>

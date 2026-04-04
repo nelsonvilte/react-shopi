@@ -5,6 +5,11 @@ const OrderCard = (props) => {
 
   const placeholder = "https://placehold.co/600x400";
 
+   const renderImage =
+    typeof imageUrl === "string"
+      ? imageUrl
+      : placeholder;
+
   
   console.log("Url Image: ", imageUrl);
 
@@ -24,8 +29,11 @@ const OrderCard = (props) => {
         <figure className="w-24 h-24">
           <img
             className="h-full w-full rounded-lg object-scale-down"
-            src={imageUrl}
+            src={renderImage}
             alt={title}
+            onError={(e) => {
+            e.target.src = "https://placehold.co/600x400";
+          }}
           />
         </figure>
         <p className="text-ellipsis	 text-sm font-light ">{title}</p>

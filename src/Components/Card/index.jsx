@@ -60,6 +60,9 @@ const Card = ({ data }) => {
           className="w-full h-full object-cover rounded-lg"
           src={data.images?.[0]}
           alt={data.title}
+          onError={(e) => {
+            e.target.src = "https://placehold.co/600x400";
+          }}
         />
 
         {renderIcon(data.id)}
