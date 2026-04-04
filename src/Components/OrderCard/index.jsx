@@ -11,7 +11,7 @@ const OrderCard = (props) => {
       : placeholder;
 
   
-  console.log("Url Image: ", imageUrl);
+  //console.log("Url Image: ", imageUrl);
 
   let renderMXMarkIcon;
   if (handleDelete) {

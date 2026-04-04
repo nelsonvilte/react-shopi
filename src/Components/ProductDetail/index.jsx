@@ -7,7 +7,7 @@ import "./style.css";
 
 const ProductDetail = () => {
   const context = useContext(ShoppingCartContext);
-  console.log("Product to show: ", context.productToShow);
+  //console.log("Product to show: ", context.productToShow);
 
   return (
     <aside

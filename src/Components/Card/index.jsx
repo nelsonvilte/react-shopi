@@ -21,7 +21,7 @@ const Card = ({ data }) => {
     context.openCheckoutSideMenu();
     context.closeProductDetail();
 
-    console.log("Cart product:", productData);
+    //console.log("Cart product:", productData);
   };
 
   const renderIcon = (id) => {

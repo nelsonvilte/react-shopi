@@ -42,7 +42,7 @@ export const ShoppingCartProvider = ({ children }) => {
       .then((response) => response.json())
       .then((data) => {
         setItems(data);
-        console.log(data);
+        //console.log(data);
       });
   }, []);
 
@@ -53,7 +53,7 @@ export const ShoppingCartProvider = ({ children }) => {
   };
 
   const filteredItemsByCategory = (items, searchByCategory) => {
-    console.log("Items: ", items);
+    //console.log("Items: ", items);
     return items?.filter((item) =>
       item.category.name.toLowerCase().includes(searchByCategory.toLowerCase()),
     );
@@ -72,7 +72,7 @@ export const ShoppingCartProvider = ({ children }) => {
     }
   }, [items, searchByTitle, searchByCategory]);
 
-  console.log("filteredItems: ", filteredItems);
+  //console.log("filteredItems: ", filteredItems);
 
   return (
     <ShoppingCartContext.Provider

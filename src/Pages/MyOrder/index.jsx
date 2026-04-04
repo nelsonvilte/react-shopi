@@ -22,8 +22,6 @@ function MyOrder() {
       </div>
       <div className="flex flex-col w-80">
         {context.order?.[index]?.products.map((product) => {
-          console.log("Producto: ",product); 
-          console.log("ORDER:", context.order);
           return (
             <OrderCard
               key={product.id}
