@@ -38,21 +38,24 @@ export const ShoppingCartProvider = ({ children }) => {
   //console.log("searchByCategory: ", searchByCategory);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://api.escuelajs.co/api/v1/products")
       .then((response) => response.json())
-      .then((data) => setItems(data));
+      .then((data) => {
+        setItems(data);
+        console.log(data);
+      });
   }, []);
 
   const filteredItemsByTitle = (items, searchByTitle) => {
     return items?.filter((item) =>
-      item.title.toLowerCase().includes(searchByTitle.toLowerCase())
+      item.title.toLowerCase().includes(searchByTitle.toLowerCase()),
     );
   };
 
   const filteredItemsByCategory = (items, searchByCategory) => {
-    //console.log("Items: ", items);
+    console.log("Items: ", items);
     return items?.filter((item) =>
-      item.category.toLowerCase().includes(searchByCategory.toLowerCase())
+      item.category.name.toLowerCase().includes(searchByCategory.toLowerCase()),
     );
   };
 
@@ -69,7 +72,7 @@ export const ShoppingCartProvider = ({ children }) => {
     }
   }, [items, searchByTitle, searchByCategory]);
 
-  //console.log("filteredItems: ", filteredItems);
+  console.log("filteredItems: ", filteredItems);
 
   return (
     <ShoppingCartContext.Provider
