@@ -38,7 +38,7 @@ export const ShoppingCartProvider = ({ children }) => {
   //console.log("searchByCategory: ", searchByCategory);
 
   useEffect(() => {
-    fetch("https://api.escuelajs.co/api/v1/products")
+    fetch("https://api.escuelajs.co/api/v1/products?offset=0&limit=30")
       .then((response) => response.json())
       .then((data) => {
         setItems(data);
