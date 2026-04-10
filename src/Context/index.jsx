@@ -38,7 +38,7 @@ export const ShoppingCartProvider = ({ children }) => {
   //console.log("searchByCategory: ", searchByCategory);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch("https://api.escuelajs.co/api/v1/products?offset=0&limit=40")
       .then((response) => response.json())
       .then((data) => {
         setItems(data);
@@ -55,7 +55,7 @@ export const ShoppingCartProvider = ({ children }) => {
   const filteredItemsByCategory = (items, searchByCategory) => {
     //console.log("Items: ", items);
     return items?.filter((item) =>
-     item.category.toLowerCase() === searchByCategory.toLowerCase()
+     item.category.name.toLowerCase() === searchByCategory.toLowerCase()
     );
   };
 

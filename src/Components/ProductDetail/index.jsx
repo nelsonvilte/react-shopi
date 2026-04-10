@@ -24,7 +24,7 @@ const ProductDetail = () => {
       <figure className="px-6">
         <img
           className="w-full h-full rounded-lg"
-          src={context.productToShow.image}
+          src={context.productToShow.images}
           alt={context.productToShow.title}
           onError={(e) => {
             e.target.src = "https://placehold.co/600x400";
